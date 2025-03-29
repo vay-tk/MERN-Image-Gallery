@@ -13,7 +13,7 @@ function ImageDetail() {
   useEffect(() => {
     const fetchAllImages = async () => {
       try {
-        const response = await fetch(`http://localhost:8090/api/images`);
+        const response = await fetch(`https://mern-image-gallery.onrender.com/api/images`);
         const { data } = await response.json();
         setImageList(data);
       } catch (err) {
@@ -23,7 +23,7 @@ function ImageDetail() {
 
     const fetchImageDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8090/api/images/${id}`);
+        const response = await fetch(`https://mern-image-gallery.onrender.com/api/images/${id}`);
         const { data } = await response.json();
         setImageDetails(data);
       } catch (err) {
@@ -38,7 +38,7 @@ function ImageDetail() {
   const handleDelete = async () => {
     if (!window.confirm("Are you sure you want to delete this image?")) return;
     try {
-      const response = await fetch(`http://localhost:8090/api/images/${id}`, {
+      const response = await fetch(`https://mern-image-gallery.onrender.com/api/images/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {
