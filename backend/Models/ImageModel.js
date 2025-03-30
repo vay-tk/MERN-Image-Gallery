@@ -25,6 +25,6 @@ const ImageGallarySchema = new Schema({
     }
 });
 
-const ImageGallaryModel = mongoose.model('images', ImageGallarySchema);
+const ImageGallaryModel = mongoose.model('imageGallery', ImageGallarySchema);
 
 export default ImageGallaryModel;
