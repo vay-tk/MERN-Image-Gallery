@@ -41,7 +41,13 @@ function ImageGallery() {
     }
   };
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps } = useDropzone({
+  onDrop,
+  accept: {
+    "image/*": [] 
+    }
+  });
+
 
   return (
     <div className="flex flex-col items-center w-full max-w-5xl mx-auto mt-12 px-6">
@@ -49,7 +55,7 @@ function ImageGallery() {
         {...getRootProps()}
         className="w-full border-2 border-dashed border-gray-400 bg-gray-50 rounded-xl p-8 text-center cursor-pointer hover:bg-gray-100 transition-all duration-300 flex flex-col items-center justify-center"
       >
-        <input {...getInputProps()} />
+        <input {...getInputProps()}  accept="image/*"  />
         <button className="w-14 h-14 bg-blue-500 text-white text-3xl font-bold rounded flex items-center justify-center shadow-md mb-3">
           +
         </button>
